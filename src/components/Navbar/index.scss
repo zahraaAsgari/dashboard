@@ -1,0 +1,67 @@
+.nav__menu {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.5rem 2rem;
+
+    .logo {
+        display: flex;
+        align-items: center;
+        gap: 0.7rem;
+    }
+
+    .nav__right {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+        font-size: 1.3rem;
+
+        .nav__icons {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+            
+        }
+
+        .nav__notification {
+            position: relative; 
+            
+            span {
+                position: absolute;
+                width: 1.2rem;
+                height: 1.2rem;
+                background-color: red;
+                font-size: 0.7em;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                top: -0.5rem;
+                right: -.7rem;
+            }
+        }
+
+        .nav__profile {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: .8rem;
+            img{
+                height:1.8rem;
+                width:1.8rem;
+                border-radius: 50%;
+                -webkit-border-radius: 50%;
+                -moz-border-radius: 50%;
+                -ms-border-radius: 50%;
+                -o-border-radius: 50%;
+                object-fit: cover;
+}
+span{
+    font-size: .9rem;
+}
+        }
+    }
+}
