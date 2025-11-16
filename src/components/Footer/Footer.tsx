@@ -1,11 +1,12 @@
-import "./index.scss"
+import React from "react"
+import "./footer.scss"
 
 const Footer = () => {
   return (
-    <footer>
-    <span>Dashboard</span>
+    <div className="footer">
+     <span>Dashboard</span>
     <span>@ Marketing Admin Dashboard</span>
-    </footer>
+    </div>
   )
 }
 

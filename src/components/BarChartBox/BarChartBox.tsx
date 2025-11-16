@@ -1,25 +1,31 @@
-
 import { Bar, BarChart, ResponsiveContainer, Tooltip } from "recharts";
-import "./index.scss";
-import { barChartProps } from "../../types";
+import "./barChartBox.scss";
 
+type Props = {
+  title: string;
+  color: string;
+  dataKey: string;
+  chartData: object[];
+};
 
-
-const BarChartBox = ({title,color,dataKey,chartData}:barChartProps) => {
+const BarChartBox = (props: Props) => {
   return (
-    <section className="bar__info">
-        <span>{title}</span>
-        <ResponsiveContainer width="99%" height="100%">
-        <BarChart width={150} height={40} data={chartData}>
+    <div className="barChartBox">
+      <h1>{props.title}</h1>
+      <div className="chart">
+        <ResponsiveContainer width="99%" height={150}>
+          <BarChart data={props.chartData}>
             <Tooltip
-            contentStyle={{background:"#2a3447",borderRadius:".5rem"}}
-            labelStyle={{display:"none"}}
+              contentStyle={{ background: "#2a3447", borderRadius: "5px" }}
+              labelStyle={{ display: "none" }}
+              cursor={{fill:"none"}}
             />
-          <Bar dataKey={dataKey} fill={color} />
-        </BarChart>
-      </ResponsiveContainer>
-    </section>
-  )
-}
+            <Bar dataKey={props.dataKey} fill={props.color} />
+          </BarChart>
+        </ResponsiveContainer>
+      </div>
+    </div>
+  );
+};
 
-export default BarChartBox
+export default BarChartBox;

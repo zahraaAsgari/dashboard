@@ -1,9 +1,9 @@
-import { useState } from "react";
-import "./index.scss";
+import React,{ useState } from "react";
+import "./products.scss"
+import DataTable from "../../components/dataTable/DataTable";
+import Add from "../../components/add/Add";
 import { GridColDef } from "@mui/x-data-grid";
-import { Add, DataTable } from "../../components";
-import { productsRows } from "../../constants/data";
-
+import { products} from "../../constants/data";
 
 
 const columns: GridColDef[] = [
@@ -11,7 +11,7 @@ const columns: GridColDef[] = [
   {
     field: "img",
     headerName: "Image",
-    width: 90,
+    width: 100,
     renderCell: (params) => {
       return <img src={params.row.img || "/noavatar.png"} alt="" />;
     },
@@ -26,50 +26,55 @@ const columns: GridColDef[] = [
     field: "color",
     type: "string",
     headerName: "Color",
-    width: 90,
+    width: 150,
   },
   {
     field: "price",
     type: "string",
     headerName: "Price",
-    width: 140,
+    width: 200,
   },
   {
     field: "producer",
     headerName: "Producer",
     type: "string",
-    width: 120,
+    width: 200,
   },
   {
     field: "createdAt",
     headerName: "Created At",
-    width: 150,
+    width: 200,
     type: "string",
   },
   {
     field: "inStock",
     headerName: "In Stock",
-    width: 90,
+    width: 150,
     type: "boolean",
   },
 ];
 
-
 const Products = () => {
+  const [open, setOpen] = useState(false);
+ 
 
-  const [open,setOpen]=useState(false);
-  
   return (
-    <section className="products">
-    <div className="products__info">
-    <h1>Products</h1>
-    <button onClick={()=>setOpen(true)}>Add New Products</button>
-    </div>
+    <div className="products">
+      <div className="info">
+        <h1>Products</h1>
+        <button onClick={() => setOpen(true)}>Add New Products</button>
+      </div>
+      <DataTable slug="products" columns={columns} rows={products} />
+      {/* TEST THE API */}
 
-<DataTable columns={columns} rows={productsRows}  slug="products" />
-{open && <Add columns={columns} slug="products" setOpen={setOpen} />}
-  </section>
-  )
-}
+      {/* {isLoading ? (
+        "Loading..."
+      ) : (
+        <DataTable slug="products" columns={columns} rows={data} />
+      )} */}
+      {open && <Add slug="product" columns={columns} setOpen={setOpen} />}
+    </div>
+  );
+};
 
 export default Products;

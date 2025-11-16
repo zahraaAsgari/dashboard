@@ -3,46 +3,19 @@ import {
 createBrowserRouter,
 Outlet,
 RouterProvider,} from "react-router-dom";
-import "./style/globals.scss";
-import {Footer, Menu, Navbar} from "./components";
-import { Home, Login, Product, Products, User, Users } from "./pages";
-// import { useAuthState } from "react-firebase-hooks/auth";
-// import { auth } from "./firebase";
+import "./styles/global.scss";
+import Navbar from "./components/navbar/Navbar";
+import Menu from "./components/menu/Menu";
+import Footer from "./components/footer/Footer";
+import Home from "./pages/home/Home";
+import Products from "./pages/products/Products";
+import Users from "./pages/users/Users";
+import User from "./pages/user/User";
+import Product from "./pages/product/Product";
+import Login from "./pages/login/Login";
 
 
  const Layout=()=>{
-  // const [user]=useAuthState(auth);
-  // const navigate=useNavigate();
-
-  // useEffect(() => {
-  //   // Retrieve the user data from local storage
-  //   const storedUserData = localStorage.getItem("user");
-
-  
-  //   // Check if there's stored user data and it's not null
-  //   if (storedUserData) {
-  //     try {
-  //       // Parse the stored user data as JSON
-  //       const storedUser = JSON.parse(storedUserData);
-  
-  //       // Check if user is not already authenticated and stored user data is available
-  //       if (!user && !storedUser) {
-  //         navigate("/login");
-  //       }
-  //     } catch (error) {
-  //       console.error("Error parsing user data from local storage:", error);
-  //     }
-  //   } else {
-  //     // Handle case when no user data is found in local storage
-  //     console.log("No user data found in local storage");
-  //     // Optionally navigate to login if necessary
-  //     navigate("/login");
-  //   }
-  // }, [user, navigate]);
-  
-
-  
- 
 
   return(
     <div className="main">
@@ -52,9 +25,6 @@ import { Home, Login, Product, Products, User, Users } from "./pages";
         <Menu/>
         </div>
       <div className="content__container">
-        {/* {user && (
-            <Outlet/>
-        ) } */}
     <Outlet/>
       </div>
       </div>

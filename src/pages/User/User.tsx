@@ -1,11 +1,15 @@
-import { Detail } from "../../components";
-import { UserDetails } from "../../constants/data";
-import "./index.scss";
+import React from "react"
+import Single from "../../components/single/Single"
+import { singleUser } from "../../constants/data";
+import "./user.scss"
 
 const User = () => {
+
+  //Fetch data and send to Single Component
+  
   return (
-    <div>
-        <Detail {...UserDetails}/>
+    <div className="user">
+      <Single {...singleUser}/>
     </div>
   )
 }
