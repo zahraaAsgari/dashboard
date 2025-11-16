@@ -1,43 +1,4 @@
-// @import "../../styles/variables.scss";
-// @import "../../styles/responsive.scss";
 
-// .menu {
-//   .item {
-//     display: flex;
-//     flex-direction: column;
-//     gap: 10px;
-//     margin-bottom: 20px;
-
-//     .title {
-//       font-size: 12px;
-//       font-weight: 200;
-//       color: $soft-color;
-//       text-transform: uppercase;
-
-//       @include lg{
-//         display: none;
-//       }
-//     }
-
-//     .listItem {
-//       display: flex;
-//       align-items: center;
-//       gap: 10px;
-//       padding: 10px;
-//       border-radius: 5px;
-
-//       &:hover {
-//         background-color: $soft-bg;
-//       }
-
-//       .listItemTitle{
-//         @include lg{
-//           display: none;
-//         }
-//       }
-//     }
-//   }
-// }
 @import "../../styles/variables.scss";
 @import "../../styles/responsive.scss";
 
@@ -46,7 +7,7 @@
     flex-direction: column;
     align-items: start;
     justify-content:space-between;
-    gap: 2.5rem;
+    gap: 2rem;
     margin-left: 0.6rem;
     margin-right: 0.6rem;
    
@@ -55,7 +16,7 @@
         display: flex;
         align-items: start;
         justify-content: space-between;
-        gap: .9rem;
+        gap: 0.6rem;
         flex-direction: column;
 
         .menu__title{
@@ -71,7 +32,7 @@
         display: flex;
         flex-direction: column;
         padding:.4rem;
-        gap:.7rem;
+        gap:1rem;
 }
 .menu__list-item{
     display: flex;
